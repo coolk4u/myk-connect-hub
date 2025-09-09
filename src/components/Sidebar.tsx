@@ -28,8 +28,8 @@ export const Sidebar = () => {
     <div className="flex h-full w-64 flex-col bg-card border-r border-border">
       {/* Header */}
       <div className="flex items-center gap-3 px-6 py-6">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-          <Building2 className="h-6 w-6 text-primary-foreground" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-primary shadow-lg">
+          <Building2 className="h-6 w-6 text-white" />
         </div>
         <div>
           <h1 className="text-lg font-bold text-foreground">MYK Laticrete</h1>
@@ -47,10 +47,10 @@ export const Sidebar = () => {
             <NavLink
               key={item.name}
               to={item.href}
-              className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+              className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200 ${
                 isActive
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                  ? 'bg-gradient-primary text-white shadow-lg'
+                  : 'text-muted-foreground hover:bg-secondary hover:text-foreground hover:shadow-sm'
               }`}
             >
               <item.icon className="h-5 w-5" />

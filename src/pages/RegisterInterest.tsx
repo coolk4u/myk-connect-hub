@@ -60,8 +60,8 @@ export default function RegisterInterest() {
           Back
         </Button>
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Register Interest</h1>
-          <p className="text-muted-foreground">Tell us about your tiling project requirements</p>
+          <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">Register Interest</h1>
+          <p className="text-muted-foreground mt-1">Tell us about your tiling project requirements</p>
         </div>
       </div>
 
@@ -158,6 +158,7 @@ export default function RegisterInterest() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
+                variant="gradient"
                 className="flex-1 gap-2"
               >
                 {isSubmitting ? (
@@ -180,24 +181,24 @@ export default function RegisterInterest() {
           <CardTitle>What Happens Next?</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="flex gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">1</div>
+          <div className="flex gap-3 items-start">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-primary text-white text-sm font-semibold shadow-lg">1</div>
             <div>
-              <h4 className="font-medium">Initial Assessment</h4>
+              <h4 className="font-semibold text-foreground">Initial Assessment</h4>
               <p className="text-sm text-muted-foreground">Our experts will review your project and schedule a site visit</p>
             </div>
           </div>
-          <div className="flex gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">2</div>
+          <div className="flex gap-3 items-start">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-primary text-white text-sm font-semibold shadow-lg">2</div>
             <div>
-              <h4 className="font-medium">Detailed Quote</h4>
+              <h4 className="font-semibold text-foreground">Detailed Quote</h4>
               <p className="text-sm text-muted-foreground">Receive a comprehensive quote with materials and timeline</p>
             </div>
           </div>
-          <div className="flex gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">3</div>
+          <div className="flex gap-3 items-start">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-primary text-white text-sm font-semibold shadow-lg">3</div>
             <div>
-              <h4 className="font-medium">Project Execution</h4>
+              <h4 className="font-semibold text-foreground">Project Execution</h4>
               <p className="text-sm text-muted-foreground">Track progress and make milestone-based payments</p>
             </div>
           </div>

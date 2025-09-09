@@ -14,7 +14,7 @@ import {
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import {
-  Sidebar,
+  Sidebar as SidebarPrimitive,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
@@ -48,7 +48,7 @@ export const AppSidebar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <Sidebar className="border-r-0 bg-gradient-to-b from-primary via-primary to-primary/90">
+    <SidebarPrimitive className="border-r-0 bg-gradient-to-b from-primary via-primary to-primary/90">
       <SidebarHeader className="border-b border-white/10 p-6">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
@@ -149,6 +149,9 @@ export const AppSidebar = () => {
           {open && 'Sign Out'}
         </Button>
       </SidebarFooter>
-    </Sidebar>
+    </SidebarPrimitive>
   );
 };
+
+// Export as Sidebar for backward compatibility
+export { AppSidebar as Sidebar };

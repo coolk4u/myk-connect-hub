@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
-import { AppSidebar } from '@/components/Sidebar';
+import { Sidebar } from '@/components/Sidebar';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 
 export default function DashboardLayout() {
@@ -8,7 +8,7 @@ export default function DashboardLayout() {
     <ProtectedRoute>
       <SidebarProvider>
         <div className="min-h-screen flex w-full">
-          <AppSidebar />
+          <Sidebar />
           <div className="flex-1 flex flex-col">
             <header className="h-14 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex items-center px-4">
               <SidebarTrigger className="mr-4" />

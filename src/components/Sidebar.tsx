@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Plus, FileText, CreditCard, Settings, LogOut, Building2, User, HelpCircle, Bell } from 'lucide-react';
+import { LayoutDashboard, Plus, FileText, CreditCard, Settings, LogOut, Building2, User, HelpCircle, Bell, AlertCircle } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Sidebar as SidebarPrimitive, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarFooter, SidebarHeader, useSidebar } from '@/components/ui/sidebar';
@@ -19,6 +19,12 @@ const mainNavigation = [{
   name: 'Payments',
   href: '/payments',
   icon: CreditCard
+}];
+
+const supportNavigation = [{
+  name: 'Complaints & Warranty',
+  href: '/complaints',
+  icon: AlertCircle
 }];
 const bottomNavigation = [{
   name: 'Settings',
@@ -84,6 +90,17 @@ export const AppSidebar = () => {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-1">
+              {supportNavigation.map(item => {
+              const active = isActive(item.href);
+              return <SidebarMenuItem key={item.name}>
+                    <SidebarMenuButton asChild>
+                      <NavLink to={item.href} className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200 ${active ? 'bg-white/20 text-white shadow-lg backdrop-blur-sm' : 'text-white/80 hover:bg-white/10 hover:text-white hover:backdrop-blur-sm'}`}>
+                        <item.icon className="h-5 w-5 flex-shrink-0" />
+                        {open && <span>{item.name}</span>}
+                      </NavLink>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>;
+            })}
               {bottomNavigation.map(item => {
               const active = isActive(item.href);
               return <SidebarMenuItem key={item.name}>

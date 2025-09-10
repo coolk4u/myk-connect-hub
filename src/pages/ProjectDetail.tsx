@@ -48,7 +48,7 @@ export default function ProjectDetail() {
   const handlePayment = (milestoneId: string, amount: number) => {
     toast({
       title: "Payment Successful!",
-      description: `Payment of $${amount.toLocaleString()} has been processed.`,
+      description: `Payment of ₹${amount.toLocaleString()} has been processed.`,
     });
   };
 
@@ -96,7 +96,7 @@ export default function ProjectDetail() {
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between text-lg">
                   <span className="font-medium">Total Amount:</span>
-                  <span className="text-2xl font-bold text-primary">${project.quote.amount.toLocaleString()}</span>
+                  <span className="text-2xl font-bold text-primary">₹{project.quote.amount.toLocaleString()}</span>
                 </div>
                 
                 <div className="text-sm text-muted-foreground">
@@ -143,14 +143,14 @@ export default function ProjectDetail() {
                       <div className="flex-1">
                         <h4 className="font-medium">{material.name}</h4>
                         <p className="text-sm text-muted-foreground">
-                          {material.quantity} {material.unit} × ${material.unitPrice} = ${material.totalPrice.toLocaleString()}
+                          {material.quantity} {material.unit} × ₹{material.unitPrice} = ₹{material.totalPrice.toLocaleString()}
                         </p>
                         <Badge variant="outline" className="mt-1 text-xs">
                           {material.category}
                         </Badge>
                       </div>
                       <div className="text-right">
-                        <div className="font-bold">${material.totalPrice.toLocaleString()}</div>
+                        <div className="font-bold">₹{material.totalPrice.toLocaleString()}</div>
                       </div>
                     </div>
                   ))}
@@ -198,7 +198,7 @@ export default function ProjectDetail() {
                       </div>
                       
                       <div className="text-right space-y-1">
-                        <div className="font-medium">${milestone.paymentDue.toLocaleString()}</div>
+                        <div className="font-medium">₹{milestone.paymentDue.toLocaleString()}</div>
                         {milestone.paymentStatus === 'paid' ? (
                           <Badge className="bg-success text-success-foreground">Paid</Badge>
                         ) : milestone.status === 'completed' ? (
@@ -256,11 +256,11 @@ export default function ProjectDetail() {
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>Total Paid:</span>
-                      <span className="font-medium">${project.totalPaid.toLocaleString()}</span>
+                      <span className="font-medium">₹{project.totalPaid.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span>Remaining:</span>
-                      <span className="font-medium">${(project.totalAmount - project.totalPaid).toLocaleString()}</span>
+                      <span className="font-medium">₹{(project.totalAmount - project.totalPaid).toLocaleString()}</span>
                     </div>
                     <Progress 
                       value={(project.totalPaid / project.totalAmount) * 100} 
@@ -286,7 +286,7 @@ export default function ProjectDetail() {
                   Complete the initial assessment payment to proceed with your project.
                 </p>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">$300</div>
+                  <div className="text-2xl font-bold text-primary mb-2">₹300</div>
                   <Button className="w-full gap-2">
                     <CreditCard className="h-4 w-4" />
                     Pay Assessment Fee

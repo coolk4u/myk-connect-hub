@@ -60,7 +60,7 @@ export default function Dashboard() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">${totalPaid.toLocaleString()}</div>
+            <div className="text-2xl font-bold">₹{totalPaid.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">
               Across all projects
             </p>
@@ -73,7 +73,7 @@ export default function Dashboard() {
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">${totalAmount.toLocaleString()}</div>
+            <div className="text-2xl font-bold">₹{totalAmount.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">
               Total project value
             </p>
@@ -129,7 +129,7 @@ export default function Dashboard() {
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span>Progress</span>
-                        <span>${interest.totalPaid.toLocaleString()} / ${interest.totalAmount.toLocaleString()}</span>
+                        <span>₹{interest.totalPaid.toLocaleString()} / ₹{interest.totalAmount.toLocaleString()}</span>
                       </div>
                       <Progress 
                         value={(interest.totalPaid / interest.totalAmount) * 100} 

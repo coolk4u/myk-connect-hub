@@ -140,7 +140,7 @@ export default function RegisterInterest() {
               <Label htmlFor="budget">Estimated Budget Range</Label>
               <Input
                 id="budget"
-                placeholder="e.g., $5,000 - $10,000"
+                placeholder="e.g., ₹5,000 - ₹10,000"
                 value={formData.budget}
                 onChange={(e) => handleInputChange('budget', e.target.value)}
               />

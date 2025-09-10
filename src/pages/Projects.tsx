@@ -77,7 +77,7 @@ export default function Projects() {
                   <DollarSign className="h-4 w-4 text-muted-foreground" />
                   <span>
                     {interest.totalAmount > 0 
-                      ? `${interest.totalPaid.toLocaleString()} / $${interest.totalAmount.toLocaleString()}`
+                      ? `₹${interest.totalPaid.toLocaleString()} / ₹${interest.totalAmount.toLocaleString()}`
                       : 'Quote pending'
                     }
                   </span>

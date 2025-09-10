@@ -70,7 +70,7 @@ export default function Payments() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">${totalPaid.toLocaleString()}</div>
+            <div className="text-2xl font-bold">₹{totalPaid.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">
               Across all projects
             </p>
@@ -110,7 +110,7 @@ export default function Payments() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              ${paymentHistory
+              ₹{paymentHistory
                 .filter(p => new Date(p.date).getMonth() === new Date().getMonth())
                 .reduce((sum, p) => sum + p.amount, 0)
                 .toLocaleString()
@@ -141,7 +141,7 @@ export default function Payments() {
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-right">
-                      <div className="font-bold">${payment.paymentDue.toLocaleString()}</div>
+                      <div className="font-bold">₹{payment.paymentDue.toLocaleString()}</div>
                       <Badge className="bg-warning text-warning-foreground">Due Now</Badge>
                     </div>
                     <Button className="gap-2">
@@ -194,7 +194,7 @@ export default function Payments() {
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-right">
-                      <div className="font-bold">${payment.amount.toLocaleString()}</div>
+                      <div className="font-bold">₹{payment.amount.toLocaleString()}</div>
                       <Badge className="bg-success text-success-foreground">Completed</Badge>
                     </div>
                     <Button variant="outline" size="sm">

@@ -3,6 +3,9 @@ import { LayoutDashboard, Plus, FileText, CreditCard, Settings, LogOut, Building
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Sidebar as SidebarPrimitive, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarFooter, SidebarHeader, useSidebar } from '@/components/ui/sidebar';
+import logo from './Dashboard Logo/Logo.svg';
+
+
 const mainNavigation = [{
   name: 'Dashboard',
   href: '/dashboard',
@@ -54,13 +57,14 @@ export const AppSidebar = () => {
   }}>
       <SidebarHeader className="border-b border-white/10 p-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
-            <Building2 className="h-6 w-6 text-white" />
+          <div className="flex h-10 w-80 items-center justify-center rounded-lg ">
+            {/* <Building2 className="h-6 w-6 text-white" /> */}
+            <img src={logo} alt="" />
           </div>
-          {open && <div>
+          {/* {open && <div>
               <h1 className="text-lg font-bold text-white">Express Tiling</h1>
               <p className="text-xs text-white/70">Customer Portal</p>
-            </div>}
+            </div>} */}
         </div>
       </SidebarHeader>
 
